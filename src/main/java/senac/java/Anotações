@@ -1,0 +1,28 @@
+A loja do seu Zezinho nos contratou para criar uma aplicação para controle de venda,
+estoque e acesso de usuários.
+
+Vamos criar o backend para essa aplicação.
+
+Ele precisa conter os sequintes dados:
+
+Usuarios (Users - Rota/api/users)
+int id
+String name
+String lastName
+String cpf
+String email
+
+estoque(products - Rota/api/products)
+int id
+String name
+String factory
+int quantity
+
+venda(sales - Rota/api/sales)
+int Id
+String user
+String products
+double valor
+bool finishedSale
+double discount
+Date Sale
