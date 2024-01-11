@@ -129,7 +129,7 @@ public class SalesController {
                 myDiscount = Float.parseFloat(json.getString("desconto"));
                 mySale = json.getString("venda");
 
-                salesDal.atualizarSales(myId, myUsuario, myProducts, myValor, myFinishedSale, myDiscount, mySale);
+                resp =  salesDal.atualizarSales(myId, myUsuario, myProducts, myValor, myFinishedSale, myDiscount, mySale);
 
                 if (resp == 0) {
                     response = "Houve um problema ao atualizar os dados da venda";
@@ -158,7 +158,7 @@ public class SalesController {
 
                 JSONObject json = new JSONObject(new String(requestBody.readAllBytes()));
                 myId = Integer.parseInt(json.getString("id"));
-                salesDal.excluirSales(myId);
+                resp = salesDal.excluirSales(myId);
 
                 if (resp == 0) {
                     response = "Houve um problema ao deletar a venda";

@@ -6,7 +6,7 @@ import org.json.JSONObject;
 import java.util.List;
 
 public class Sales {
-    int id;
+    public int id;
     public  String usuario = "";
     public  String products = "";
     public  float valor = 0;
@@ -18,6 +18,9 @@ public class Sales {
     //Construtor
 
     public Sales() {
+    }
+    public Sales(int id){
+        this.id = id;
     }
 
     public Sales(String usuario, String products, float valor, String finishedSale, float discount, String sale) {

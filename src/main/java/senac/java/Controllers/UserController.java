@@ -134,7 +134,7 @@ public class UserController {
                 myEmail = json.getString("email");
                 myCpf = json.getString("cpf");
 
-                userDal.atualizarUsuario(myId, myName, mySobrenome, myEmail, myCpf);
+                resp = userDal.atualizarUsuario(myId, myName, mySobrenome, myEmail, myCpf);
 
                 if (resp == 0) {
                     response = "Houve um problema ao atualizar os dados do usuario";
@@ -167,11 +167,11 @@ public class UserController {
 
                 JSONObject json = new JSONObject(new String(requestBody.readAllBytes()));
                 myId = Integer.parseInt(json.getString("id"));
-                userDal.excluirUsuario(myId);
+                resp = userDal.excluirUsuario(myId);
 
                 if (resp == 0) {
                     response = "Houve um problema ao deletar o usuario";
-                    res.enviarResponse(exchange, response, 200);
+                    res.enviarResponse(exchange, response, 500);
                 } else if (resp > 0) {
                     response = "Usuário deletado com sucesso";
                     res.enviarResponse(exchange, response, 200);

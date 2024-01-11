@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Users {
 
-    int id;
+    public int id;
     public String name = "";
     public String lastName = "";
     public String email = "";
@@ -21,6 +21,9 @@ public class Users {
 
     }
 
+    public Users(int id){
+        this.id = id;
+    }
     public Users(String name, String lastName, String email, String cpf) {
         this.name = name;
         this.lastName = lastName;

@@ -120,7 +120,7 @@ public class ProductController {
                 myQuantity = json.getString("quantidade");
 
 
-                productDal.atualizarProdutos(myId, myName, myFactory, myQuantity);
+                resp = productDal.atualizarProdutos(myId, myName, myFactory, myQuantity);
 
                 if (resp == 0) {
                     response = "Houve um problema ao atualizar os dados do produto";
@@ -149,7 +149,7 @@ public class ProductController {
 
                 JSONObject json = new JSONObject(new String(requestBody.readAllBytes()));
                 myId = Integer.parseInt(json.getString("id"));
-                productDal.excluirProdutos(myId);
+                resp = productDal.excluirProdutos(myId);
 
                 if (resp == 0) {
                     response = "Houve um problema ao deletar o produto";

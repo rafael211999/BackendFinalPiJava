@@ -142,7 +142,7 @@ public class UserDal {
         int linhasAfetadas = 0;
 
         try (PreparedStatement statement = conectar().prepareStatement(sql)) {
-//            statement.setInt(1, id);
+            statement.setInt(1, id);
 
             linhasAfetadas = statement.executeUpdate();
             System.out.println("Foram afetadas " + linhasAfetadas + " no banco de dados");

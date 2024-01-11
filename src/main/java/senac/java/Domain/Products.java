@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Products {
 
-    int id;
+    public int id;
     public  String name = "";
     public  String factory = "";
     public  String quantity = "";
@@ -17,6 +17,10 @@ public class Products {
     //Constructor
 
     public  Products(){}
+
+    public Products(int id){
+        this.id = id;
+    }
 
 
     public Products(String name, String factory, String quantity){
